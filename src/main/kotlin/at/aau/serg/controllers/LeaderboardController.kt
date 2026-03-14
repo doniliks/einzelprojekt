@@ -19,7 +19,7 @@ class LeaderboardController(
     fun getLeaderboard(
         @RequestParam(required = false) rank: Int?
     ): List<GameResult> {
-        val result: List<GameResult> = gameResultService.getGameResults().sortedWith(compareBy<GameResult>({ -it.score }).thenBy { it.timeInSeconds })
+        val result = gameResultService.getGameResults().sortedWith(compareBy<GameResult>({ -it.score }).thenBy { it.timeInSeconds })
         if(rank == null) {
             return result
         }
