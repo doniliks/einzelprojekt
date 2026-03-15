@@ -83,7 +83,7 @@ class GameResultServiceTests {
         service.deleteGameResult(1)
         val res = service.getGameResults()
         assertEquals(1, res.size)
-        assertEquals(false, res.contains(gameResult1))
+        assert(!res.contains(gameResult1))
     }
 
 

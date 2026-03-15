@@ -33,7 +33,7 @@ class GameResultControllerTests {
 
         val res = controller.getGameResult(1)
         verify(mockedService).getGameResult(1)
-        assertEquals(res, first)
+        assertEquals(first, res)
     }
 
 
@@ -57,8 +57,6 @@ class GameResultControllerTests {
         assertEquals(listOfGameResults, res)
 
     }
-
-
     @Test
     fun test_addGameResult() {
         controller.addGameResult(first)
